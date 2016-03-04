@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Monopoly - George Kiknadze</title>
+
+    <!-- Bootstrap -->
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <!-- Logo -->
+          <a class="navbar-brand" href="#">Monopoly</a>  
+        </div>
+        <!-- User welcome -->
+          <p class="navbar-text navbar-right"><span class="playerMoney"></span>  <span class="welcome_name"> Good Luck Player</span> <i class="fa fa-user"></i></p>
+      </div>
+    </nav>
+    
+    <div class="container">
+      <div class="row">
+        
+        <div class="col-md-6">
+          <!-- Roll dice button -->
+          <button type="button" class="btn btn-default dice" onclick="rollDice()" disabled="disabled"><img src="ico/dice.png" width="15px"> Roll</button>
+          <span class="diceDisplay">Roll dice</span><br>
+          <!-- End move button -->
+          <button type="button" class="btn btn-danger end-move" disabled="disabled">End Move</button>
+        </div>
+        
+        <div class="col-md-6">
+          
+          
+          <div class="input-group registration">
+            <input type="text" class="form-control playerName" aria-label="..." placeholder="Enter your name">
+            <div class="input-group-btn">
+              <!-- Buttons -->
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button" onclick="PersonGenerator()"><i class="fa fa-user-plus"></i></button>
+              </span>
+            </div>
+          </div>
+          <!-- Error message-->
+          
+          <div class="alert alert-danger errorMessage" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span>
+            Please enter your name
+          </div>
+          
+        </div>
+
+      </div>
+      <hr>
+      
+      <!-- Game board -->
+      <div class="row">
+        <div class="col-md-12">
+          <!-- Game details -->
+          <p>You: <i class="fa fa-plane"></i> | Computer: <i class="fa fa-car"></i></p> 
+          
+          <!-- Start button-->
+          <button type="button" class="btn btn-success pull-right start-game">Start Game</button>
+          <table class="table table-bordered gameBoard">
+            <tr>
+              <td id="7" class="51"><p><i class="fa fa-info-circle"></i></p><h3><i class="fa fa-taxi"></i>Taxi<h3><br></td>
+              <td id="8" class="52 prop"><p><i class="fa fa-info-circle"></i></p><i class="fa fa-linux"></i><br>Computer Software Company<br></td>
+              <td id="9" class="53 prop"><p><i class="fa fa-info-circle"></i></p><i class="fa fa-home"></i><br>Property<br></td>
+              <td id="10" class="54"><p><i class="fa fa-info-circle"></i></p><h3><i class="fa fa-university"></i>Bank</h3><br></td>
+            </tr>
+            <tr>
+              <td id="6" class="50 prop"><p><i class="fa fa-info-circle"></i></p><i class="fa fa-industry"></i><br>Industry<br></td>
+              <td class="test1 test2"><h4>Player <i class="fa fa-user"></i></h4><span class="welcome_name"></span><br><span class="playerMoney"></span></td>
+              <td class="test test2"><h4>Computer <i class="fa fa-reddit-alien"></i></h4> <span class="computer_name"></span><br><span class="computer_money"></span></td>
+              <td id="11" class="55 prop"><p><i class="fa fa-info-circle"></i></p><i class="fa fa-cloud"></i><br>Cloud Server Comp.<br></td>
+            </tr>
+            <tr>
+              <td id="5" class="49 prop"><p><i class="fa fa-info-circle"></i></p><i class="fa fa-plane"></i><br>Airport<br></td>
+              <td class="test1 commands"><textarea id="playerConsole"></textarea></td>
+              <td class="test commands"><textarea id="computerConsole"></textarea></td>
+              <td id="12" class="56"><p><i class="fa fa-info-circle"></i></p><i class="fa fa-undo"></i><br>Go back<br></td>
+            </tr>
+            <tr>
+              <td id="4" class="48"><p><i class="fa fa-info-circle"></i></p><h3><i class="fa fa-gavel"></i> Jail</h3><br></td>
+              <td id="3" class="47 prop"><p><i class="fa fa-info-circle"></i></p><i class="fa fa-glass"></i><br>Night Club<br></td>
+              <td id="2" class="46 prop"><p><i class="fa fa-info-circle"></i></p><i class="fa fa-cubes"></i><br>Transit Company<br></td>
+              <td id="1"><h3>Start <i class="fa fa-flag-checkered"></i></p></h3><br></td>
+            </tr>
+          </table> 
+
+          
+        </div> 
+      </div>
+    </div>
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/dice.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/properties.js"></script>
+  </body>
+</html>
